@@ -11,7 +11,7 @@ Welcome to the Zero Gravity (0G) Testnet Service! This repository provides all t
 ### 2. Key-Value Node
 - **Endpoint:** https://0g-kv-node.tech-coha05.xyz
 - **Description:** This node provides key-value storage services for the Zero Gravity testnet.
-- 
+  
 ### 3. Storage Node
 - **Endpoint:** https://0g-storage-node.tech-coha05.xyz
 - **Description:** This node provides storage services for the Zero Gravity testnet.
