@@ -4,24 +4,24 @@ Welcome to the Zero Gravity (0G) Testnet Service! This repository provides all t
 
 ## Services
 
-### 1. Key-Value Node
-- **Endpoint:** `http://0g-kv-node.tech-coha05.xyz`
-- **Description:** This node provides key-value storage services for the Zero Gravity testnet.
-
-### 2. gRPC Node
-- **Endpoint:** `http://0grpc.tech-coha05.xyz`
+### 1. gRPC Node
+- **Endpoint:** https://0grpc.tech-coha05.xyz
 - **Description:** This node provides gRPC services for the Zero Gravity testnet.
 
+### 2. Key-Value Node
+- **Endpoint:** https://0g-kv-node.tech-coha05.xyz
+- **Description:** This node provides key-value storage services for the Zero Gravity testnet.
+- 
 ### 3. Storage Node
-- **Endpoint:** `http://0g-storage-node.tech-coha05.xyz`
+- **Endpoint:** https://0g-storage-node.tech-coha05.xyz
 - **Description:** This node provides storage services for the Zero Gravity testnet.
 
 ### 4. Testnet RPC
-- **Endpoint:** `http://0g-testnet-rpc.tech-coha05.xyz`
+- **Endpoint:** https://0g-testnet-rpc.tech-coha05.xyz
 - **Description:** This endpoint provides RPC services for interacting with the Zero Gravity testnet.
 
 ### 5. API Testnet
-- **Endpoint:** `http://0g-api-testnet.tech-coha05.xyz`
+- **Endpoint:** https://0g-api-testnet.tech-coha05.xyz
 - **Description:** This endpoint provides API services for interacting with the Zero Gravity testnet.
 
 ## How to Use
@@ -31,4 +31,4 @@ To interact with the Zero Gravity testnet, you can use the provided endpoints. E
 ### Example Request
 Here is an example of how you can use one of the endpoints to make a request:
 ```bash
-curl -X POST http://0g-testnet-rpc.tech-coha05.xyz -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+curl -X POST https://0g-testnet-rpc.tech-coha05.xyz -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
