@@ -30,9 +30,13 @@ To interact with the Zero Gravity testnet, you can use the provided endpoints. E
 
 ### Example Request
 Here is an example of how you can use one of the endpoints to make a request:
-```curl -X POST https://0g-testnet-rpc.tech-coha05.xyz -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'```
+```
+curl -X POST https://0g-testnet-rpc.tech-coha05.xyz -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}'
+```
 This request retrieves the list of validators from the Zero Gravity testnet using the API endpoint.
 
 ### Example API Request
 Here is an example of how you can use the API endpoint to get a list of validators:
-```curl -X GET https://0g-api-testnet.tech-coha05.xyz/cosmos/staking/v1beta1/validators```
+```
+curl -X GET https://0g-api-testnet.tech-coha05.xyz/cosmos/staking/v1beta1/validators
+```
