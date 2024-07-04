@@ -40,3 +40,9 @@ Here is an example of how you can use the API endpoint to get a list of validato
 ```
 curl -X GET https://0g-api-testnet.tech-coha05.xyz/cosmos/staking/v1beta1/validators
 ```
+## Fresh peers from my node
+```
+PEERS=$(curl -sS https://0grpc.tech-coha05.xyz/net_info | jq -r '.result.peers[] | "\(.node_info.id)@\(.remote_ip):\(.node_info.listen_addr)"' | awk -F ':' '{print $1":"$(NF)}' | paste -sd, -)
+echo $PEERS
+sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.0gchain/config/config.toml
+```
