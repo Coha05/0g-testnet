@@ -1,4 +1,4 @@
-# Zero Gravity (0G) Testnet Service
+![image](https://github.com/Coha05/0g-testnet/assets/119700026/1447ae55-32ab-48ec-8c97-6bfc42a40a0b)# Zero Gravity (0G) Testnet Service
 
 Welcome to the Zero Gravity (0G) Testnet Service! This repository provides all the necessary information about the various endpoints available for interacting with the Zero Gravity testnet. Below you will find details and links for the RPC, API, and other services.
 
@@ -48,3 +48,5 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.0
 ```
 ## Explorer
 **Dashboard:** https://explorer.tech-coha05.xyz/0g
+![image](https://github.com/Coha05/0g-testnet/assets/119700026/b16b682c-dff2-4ce4-a76f-8708a67fa413)
+
