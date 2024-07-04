@@ -1,3 +1,4 @@
+![cover-0g](https://github.com/Coha05/0g-testnet/assets/119700026/181aa32e-c294-4231-85c0-7d4117f7dbc8)
 # Zero Gravity (0G) Testnet Service
 
 Welcome to the Zero Gravity (0G) Testnet Service! This repository provides all the necessary information about the various endpoints available for interacting with the Zero Gravity testnet. Below you will find details and links for the RPC, API, and other services.
