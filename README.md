@@ -46,3 +46,5 @@ PEERS=$(curl -sS https://0grpc.tech-coha05.xyz/net_info | jq -r '.result.peers[]
 echo $PEERS
 sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.0gchain/config/config.toml
 ```
+## Explorer
+**Dashboard:** https://explorer.tech-coha05.xyz/0g
