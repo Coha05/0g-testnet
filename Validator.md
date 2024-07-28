@@ -2,6 +2,10 @@
 ```
 source <(curl -s https://raw.githubusercontent.com/Coha05/0g-testnet/main/auto-install-0g.sh)
 ```
+### Check logs
+```
+tail -f $HOME/.0gchain/log/chain.log
+```
 
 # Upgrade Validator to higher version
 
