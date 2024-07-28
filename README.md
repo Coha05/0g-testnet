@@ -63,15 +63,18 @@ git clone https://github.com/0glabs/0g-chain.git
 cd 0g-chain
 git checkout v0.2.5
 make install
-
 0gchaind version
+sudo systemctl restart 0gd && sudo journalctl -u 0gd -f -o cat
+```
 
-sudo systemctl restart 0gd && sudo journalctl -u 0gd -f -o cat```
+**New logs folder check:**
 
-New logs folder check:
+```
+tail -f $HOME/.0gchain/log/chain.log
+```
 
-```tail -f $HOME/.0gchain/log/chain.log```
+**If you can't check version try this command:**
 
-If you can't check version try this command:
-
-```$HOME/go/bin/0gchaind version```
+```
+$HOME/go/bin/0gchaind version
+```
