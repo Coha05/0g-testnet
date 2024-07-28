@@ -5,8 +5,6 @@ source <(curl -s https://raw.githubusercontent.com/Coha05/0g-testnet/main/auto-i
 
 # Upgrade Validator to higher version
 
-#!/bin/bash
-
 ### Stop the current service
 sudo systemctl stop 0gd
 
