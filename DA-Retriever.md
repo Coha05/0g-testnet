@@ -42,7 +42,7 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=root/0g-da-retriever/target/release/retriever --config /path/to/0g-da-retriever/run/config.toml
+ExecStart=/root/0g-da-retriever/target/release/retriever --config /root/0g-da-retriever/run/config.toml
 Restart=always
 RestartSec=10
 StandardOutput=syslog
