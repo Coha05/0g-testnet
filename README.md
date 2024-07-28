@@ -25,6 +25,11 @@ Welcome to the Zero Gravity (0G) Testnet Service! This repository provides all t
 - **Endpoint:** https://0g-api-testnet.tech-coha05.xyz
 - **Description:** This endpoint provides API services for interacting with the Zero Gravity testnet.
 
+### 6. DA-Node
+- **Endpoint:** https://0g-da-node.tech-coha05.xyz/
+### 7. DA-Client
+- **Endpoint:** https://0g-da-client.tech-coha05.xyz/
+
 ## How to Use
 
 To interact with the Zero Gravity testnet, you can use the provided endpoints. Each endpoint corresponds to a specific service, such as key-value storage, gRPC, storage, RPC, and API services.
@@ -50,31 +55,3 @@ sed -i.bak -e "s/^persistent_peers *=.*/persistent_peers = \"$PEERS\"/" $HOME/.0
 ## Explorer
 **Dashboard:** https://explorer.tech-coha05.xyz/0g
 ![image](https://github.com/Coha05/0g-testnet/assets/119700026/b16b682c-dff2-4ce4-a76f-8708a67fa413)
-
-# Upgrade Zero Gravity Validator 
-
-## Upgrade validator node to v0.2.5 
-
-```sudo systemctl stop 0gd
-
-cd $HOME
-rm -rf 0g-chain
-git clone https://github.com/0glabs/0g-chain.git
-cd 0g-chain
-git checkout v0.2.5
-make install
-0gchaind version
-sudo systemctl restart 0gd && sudo journalctl -u 0gd -f -o cat
-```
-
-**New logs folder check:**
-
-```
-tail -f $HOME/.0gchain/log/chain.log
-```
-
-**If you can't check version try this command:**
-
-```
-$HOME/go/bin/0gchaind version
-```
