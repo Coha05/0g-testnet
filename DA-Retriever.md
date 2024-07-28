@@ -41,8 +41,8 @@ Description=DA Retriever Service
 After=network.target
 
 [Service]
-User=<your-username>
-ExecStart=$HOME/0g-da-retriever/target/release/retriever --config /path/to/0g-da-retriever/run/config.toml
+User=root
+ExecStart=root/0g-da-retriever/target/release/retriever --config /path/to/0g-da-retriever/run/config.toml
 Restart=always
 RestartSec=10
 StandardOutput=syslog
