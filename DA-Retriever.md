@@ -29,8 +29,7 @@ cd 0g-da-retriever
 cargo build --release
 ```
 # Running with systemd
-## 1. Create service
-Create service name "DA-re"
+## 1. Create service with name
 ```
 sudo nano /etc/systemd/system/da-re.service
 ```
