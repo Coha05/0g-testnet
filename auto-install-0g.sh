@@ -101,4 +101,4 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl enable 0gd
 sudo systemctl restart 0gd
-sudo journalctl -u 0gd -f -o cat
+tail -f $HOME/.0gchain/log/chain.log
