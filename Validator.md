@@ -41,7 +41,7 @@ $HOME/go/bin/0gchaind version
 ```
 ### Restart the service and follow the logs
 ```
-sudo systemctl restart 0gd && sudo journalctl -u 0gd -f -o cat
+sudo systemctl restart 0gd
 ```
 ### Check the new logs folder
 ```
