@@ -1,6 +1,6 @@
 # Auto Install 
 ```
-source <(curl -s https://raw.githubusercontent.com/Coha05/0g-testnet/main/auto-install-0g.sh)
+source <(curl -s https://raw.githubusercontent.com/Coha05/0g-testnet/main/validator/auto-install-0g.sh)
 ```
 ### Check logs
 ```
