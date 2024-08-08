@@ -9,41 +9,41 @@ tail -f $HOME/.0gchain/log/chain.log
 
 # Upgrade Validator to higher version without Cosmovisor
 
-### Stop the current service
+1. Stop the current service
 ```
 sudo systemctl stop 0gd
 ```
-### Navigate to home directory and remove the old version
+2. Navigate to home directory and remove the old version
 ```
 cd $HOME
 rm -rf 0g-chain
 ```
-### Clone the repository
+3. Clone the repository
 ```
 git clone https://github.com/0glabs/0g-chain.git
 cd 0g-chain
 ```
-### Get the latest release tag from GitHub
+4. Get the latest release tag from GitHub
 ```
 latest_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
 ```
-### Checkout the latest release tag
+5. Checkout the latest release tag
 ```
 git checkout $latest_tag
 ```
-### Build and install the new version
+6. Build and install the new version
 ```
 make install
 ```
-### Check the version
+7. Check the version
 ```
 $HOME/go/bin/0gchaind version
 ```
-### Restart the service and follow the logs
+8. Restart the service and follow the logs
 ```
 sudo systemctl restart 0gd
 ```
-### Check the new logs folder
+9. Check the new logs folder
 ```
 tail -f $HOME/.0gchain/log/chain.log
 ```
