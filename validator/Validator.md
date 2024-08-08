@@ -49,7 +49,7 @@ tail -f $HOME/.0gchain/log/chain.log
 ```
 
 # Upgrade Validator to higher version with Cosmovisor 
-Download the exact binary url NOT compile, also change the service systemd as your service
+**Download the exact binary url NOT compile, also change the service systemd as your service**
 
 1. Stop the Cosmovisor Service:
 ```
