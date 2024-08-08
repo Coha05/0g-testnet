@@ -51,6 +51,28 @@ tail -f $HOME/.0gchain/log/chain.log
 # Upgrade Validator to higher version with Cosmovisor 
 **Download the exact binary url NOT compile, also change the service systemd as your service**
 
+**Make sure your service look like this:**
+```
+[Unit]
+Description=Cosmovisor 0G Node
+After=network.target
+
+[Service]
+User=root
+Type=simple
+ExecStart=/$HOME/go/bin/cosmovisor run start
+Restart=on-failure
+LimitNOFILE=65535
+Environment="DAEMON_NAME=0gchaind"
+Environment="DAEMON_HOME=/$HOME/.0gchain"
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+Environment="DAEMON_DATA_BACKUP_DIR=/$HOME/.0gchain/cosmovisor/backup"
+
+[Install]
+WantedBy=multi-user.target
+```
+
 **1. Stop the Cosmovisor Service:**
 ```
 sudo systemctl stop 0gd.service
