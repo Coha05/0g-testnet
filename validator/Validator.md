@@ -104,7 +104,7 @@ Description=Cosmovisor 0G Node
 After=network.target
 
 [Service]
-User=cong
+User=root
 Type=simple
 WorkingDirectory=root/.0gchain
 ExecStart=root/bin/cosmovisor run start
