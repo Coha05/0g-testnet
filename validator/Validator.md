@@ -83,3 +83,8 @@ sudo systemctl start 0gd.service
 ```
 tail -f $HOME/.0gchain/log/chain.log
 ```
+
+****NOTE:**
+The directory structure looks something like this:
+
+![image](https://github.com/user-attachments/assets/afb1984b-f241-4b16-a4da-97227730c7e5)
