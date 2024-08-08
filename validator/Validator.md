@@ -107,7 +107,7 @@ After=network.target
 User=root
 Type=simple
 WorkingDirectory=root/.0gchain
-ExecStart=root/bin/cosmovisor run start
+ExecStart=root/go/bin/cosmovisor run start
 Restart=on-failure
 LimitNOFILE=65535
 Environment="DAEMON_NAME=0gchaind"
