@@ -7,7 +7,7 @@ source <(curl -s https://raw.githubusercontent.com/Coha05/0g-testnet/main/valida
 tail -f $HOME/.0gchain/log/chain.log
 ```
 
-# Upgrade Validator to higher version
+# Upgrade Validator to higher version without Cosmovisor
 
 ### Stop the current service
 ```
@@ -44,6 +44,42 @@ $HOME/go/bin/0gchaind version
 sudo systemctl restart 0gd
 ```
 ### Check the new logs folder
+```
+tail -f $HOME/.0gchain/log/chain.log
+```
+
+# Upgrade Validator to higher version with Cosmovisor 
+Download the exact binary url NOT compile, also change the service systemd as your service
+
+1. Stop the Cosmovisor Service:
+```
+sudo systemctl stop 0gd.service
+```
+2. Create the Upgrade Directory:
+```
+mkdir -p $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin
+```
+3. Download the New Binary:
+```
+wget -O $HOME/0gchaind-linux-v0.3.0 https://zgchaind-test.s3.ap-east-1.amazonaws.com/0gchaind-linux-v0.3.0
+```
+4. Move the Binary to the Upgrades Directory:
+```
+cp $HOME/0gchaind-linux-v0.3.0 $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin/0gchaind
+```
+5. Make the New Binary Executable:
+```
+chmod +x $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin/0gchaind
+```
+6. Start the Cosmovisor (OG) Service:
+```
+sudo systemctl start 0gd.service
+```
+7. Check version:
+```
+0gchaind version
+```
+8. Check logs:
 ```
 tail -f $HOME/.0gchain/log/chain.log
 ```
