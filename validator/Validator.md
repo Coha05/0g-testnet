@@ -82,7 +82,7 @@ After=network.target
 User=root
 Type=simple
 WorkingDirectory=root/.0gchain
-ExecStart=/home/cong/go/bin/0gchaind start --home root/.0gchain --log_output_console
+ExecStart=root/go/bin/0gchaind start --home root/.0gchain --log_output_console
 Restart=on-failure
 LimitNOFILE=65535
 
