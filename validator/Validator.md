@@ -49,7 +49,9 @@ sudo systemctl restart 0gd
 ```
 tail -f $HOME/.0gchain/log/chain.log
 ```
-## Option 2 with version 0.3.0
+## Option 2 with version 0.3.1
+
+**Upgrade before block `616000` will not work!**
 
 ```
 sudo systemctl stop 0gd
@@ -59,13 +61,13 @@ cd $HOME
 rm -rf 0g-chain
 ```
 ```
-wget -O $HOME/0gchaind-linux-v0.3.0 https://zgchaind-test.s3.ap-east-1.amazonaws.com/0gchaind-linux-v0.3.0
+wget -O $HOME/0gchaind-linux-v0.3.1 https://github.com/0glabs/0g-chain/releases/download/v0.3.1.alpha.0/0gchaind-linux-v0.3.1.alpha.0
 ```
 ```
-chmod +x $HOME/0gchaind-linux-v0.3.0
+chmod +x $HOME/0gchaind-linux-v0.3.1
 ```
 ```
-mv $HOME/0gchaind-linux-v0.3.0 $HOME/go/bin/0gchaind
+mv $HOME/0gchaind-linux-v0.3.1 $HOME/go/bin/0gchaind
 ```
 ```
 $HOME/go/bin/0gchaind version
