@@ -83,8 +83,8 @@ After=network.target
 [Service]
 User=root
 Type=simple
-WorkingDirectory=root/.0gchain
-ExecStart=root/go/bin/0gchaind start --home root/.0gchain --log_output_console
+WorkingDirectory=/root/.0gchain
+ExecStart=/root/go/bin/0gchaind start --home root/.0gchain --log_output_console
 Restart=on-failure
 LimitNOFILE=65535
 
@@ -109,14 +109,14 @@ After=network.target
 User=root
 Type=simple
 WorkingDirectory=root/.0gchain
-ExecStart=root/go/bin/cosmovisor run start
+ExecStart=/root/go/bin/cosmovisor run start
 Restart=on-failure
 LimitNOFILE=65535
 Environment="DAEMON_NAME=0gchaind"
 Environment="DAEMON_HOME=root/.0gchain"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-Environment="DAEMON_DATA_BACKUP_DIR=root/.0gchain/cosmovisor/backup"
+Environment="DAEMON_DATA_BACKUP_DIR=/root/.0gchain/cosmovisor/backup"
 
 [Install]
 WantedBy=multi-user.target
