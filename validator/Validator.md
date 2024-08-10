@@ -96,9 +96,9 @@ sudo systemctl daemon-reload
 sudo systemctl restart 0gd.service
 sudo journalctl -u 0gd -f
 ```
-# Upgrade Validator to higher version with Cosmovisor 
+# Upgrade Validator to higher version with Cosmovisor if it not auto-upgrade
 **Download the exact binary url NOT compile, also change the service systemd as your service**
-
+**Upgrade before block `616000` will not work**
 **Make sure your service look like this:**
 ```
 [Unit]
@@ -133,15 +133,15 @@ mkdir -p $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin
 ```
 **3. Download the New Binary:**
 ```
-wget -O $HOME/0gchaind-linux-v0.3.0 https://zgchaind-test.s3.ap-east-1.amazonaws.com/0gchaind-linux-v0.3.0
+wget -O $HOME/0gchaind-linux-v0.3.1 https://github.com/0glabs/0g-chain/releases/download/v0.3.1.alpha.0/0gchaind-linux-v0.3.1.alpha.0
 ```
 **4. Move the Binary to the Upgrades Directory:**
 ```
-cp $HOME/0gchaind-linux-v0.3.0 $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin/0gchaind
+cp $HOME/0gchaind-linux-v0.3.1 $HOME/.0gchain/cosmovisor/upgrades/v0.3.1/bin/0gchaind
 ```
 **5. Make the New Binary Executable:**
 ```
-chmod +x $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin/0gchaind
+chmod +x $HOME/.0gchain/cosmovisor/upgrades/v0.3.1/bin/0gchaind
 ```
 **6. Start the Cosmovisor (OG) Service:**
 ```
