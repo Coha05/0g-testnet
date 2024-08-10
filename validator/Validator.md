@@ -98,7 +98,9 @@ sudo journalctl -u 0gd -f
 ```
 # Upgrade Validator to higher version with Cosmovisor if it not auto-upgrade
 **Download the exact binary url NOT compile, also change the service systemd as your service**
+
 **Upgrade before block `616000` will not work**
+
 **Make sure your service look like this:**
 ```
 [Unit]
