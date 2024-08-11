@@ -131,7 +131,7 @@ sudo systemctl stop 0gd.service
 ```
 **2. Create the Upgrade Directory:**
 ```
-mkdir -p $HOME/.0gchain/cosmovisor/upgrades/v0.3.0/bin
+mkdir -p $HOME/.0gchain/cosmovisor/upgrades/v0.3.1/bin
 ```
 **3. Download the New Binary:**
 ```
