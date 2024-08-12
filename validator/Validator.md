@@ -119,6 +119,7 @@ Environment="DAEMON_HOME=/root/.0gchain"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=true"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
 Environment="DAEMON_DATA_BACKUP_DIR=/root/.0gchain/cosmovisor/backup"
+Environment="UNSAFE_SKIP_BACKUP=true"
 
 [Install]
 WantedBy=multi-user.target
