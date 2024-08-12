@@ -20,11 +20,16 @@ go version
 # Step 3: Download and install Cosmovisor
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 
-# Step 4: Build 0gchaind binary from version v0.2.5
+# Step 4: Build 0gchaind binary from the latest tag
 cd $HOME
 git clone https://github.com/0glabs/0g-chain.git
 cd 0g-chain
-git checkout v0.2.5
+
+# Fetch the latest tag and check it out
+LATEST_TAG=$(git describe --tags `git rev-list --tags --max-count=1`)
+git checkout $LATEST_TAG
+
+# Build and install
 make install
 0gchaind version
 
@@ -44,8 +49,9 @@ cd $HOME
 0gchaind config node tcp://localhost:$RPC_PORT
 0gchaind config keyring-backend os
 
-# Step 7: Download genesis.json
+# Step 7: Download genesis.json and address book
 wget https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json -O $HOME/.0gchain/config/genesis.json
+wget -O $HOME/.0gchain/config/addrbook.json https://raw.githubusercontent.com/Coha05/0g-testnet/main/validator/addrbook.json
 
 # Step 8: Add seeds and peers to the config.toml
 SEEDS="81987895a11f6689ada254c6b57932ab7ed909b6@54.241.167.190:26656,010fb4de28667725a4fef26cdc7f9452cc34b16d@54.176.175.48:26656,e9b4bc203197b62cc7e6a80a64742e752f4210d5@54.193.250.204:26656,68b9145889e7576b652ca68d985826abd46ad660@18.166.164.232:26656"
