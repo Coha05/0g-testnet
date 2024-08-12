@@ -1,4 +1,4 @@
-# Auto Install 
+# Auto Install (Do not using it right now, becuz many binary version causing issue)
 ```
 source <(curl -s https://raw.githubusercontent.com/Coha05/0g-testnet/main/validator/auto-install-0g.sh)
 ```
