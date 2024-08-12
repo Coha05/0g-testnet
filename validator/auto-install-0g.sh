@@ -85,7 +85,14 @@ sed -i "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0ua0gi\"/" $HOME/.0gch
 # Step 12: Enable indexer (Optional)
 sed -i "s/^indexer *=.*/indexer = \"kv\"/" $HOME/.0gchain/config/config.toml
 
-# Step 13: Create a Cosmovisor service file
+# Step 13: Create the Cosmovisor directories
+mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
+mkdir -p $HOME/.0gchain/cosmovisor/upgrades
+
+# Step 14: Copy the 0gchaind binary to the genesis bin directory
+cp $(which 0gchaind) $HOME/.0gchain/cosmovisor/genesis/bin
+
+# Step 15: Create a Cosmovisor service file
 sudo tee /etc/systemd/system/0gd.service > /dev/null <<EOF
 [Unit]
 Description=Cosmovisor 0G Node
@@ -109,8 +116,10 @@ Environment="UNSAFE_SKIP_BACKUP=true"
 WantedBy=multi-user.target
 EOF
 
-# Step 14: Start the node
+# Step 16: Start the node
 sudo systemctl daemon-reload
 sudo systemctl enable 0gd
-sudo systemctl restart 0gd
-tail -f $HOME/.0gchain/log/chain.log
+sudo systemctl start 0gd
+
+# Step 17: Verify the node is running correctly
+journalctl -u 0gd -f
