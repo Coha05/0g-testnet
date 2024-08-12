@@ -49,7 +49,8 @@ wget https://github.com/0glabs/0g-chain/releases/download/v0.2.3/genesis.json -O
 
 # Step 8: Add seeds and peers to the config.toml
 SEEDS="81987895a11f6689ada254c6b57932ab7ed909b6@54.241.167.190:26656,010fb4de28667725a4fef26cdc7f9452cc34b16d@54.176.175.48:26656,e9b4bc203197b62cc7e6a80a64742e752f4210d5@54.193.250.204:26656,68b9145889e7576b652ca68d985826abd46ad660@18.166.164.232:26656"
-sed -i.bak -e "s/^seeds *=.*/seeds = \"${SEEDS}\"/" $HOME/.0gchain/config/config.toml
+PEERS="bf8f850598d3d52ee176296f07c10212e0d334ca@testnet-v2-0g-rpc.emberstake.xyz:34140"
+sed -i.bak -e "s/^seeds *=.*/seeds = \"${SEEDS}\"/" -e "s/^persistent_peers *=.*/persistent_peers = \"${PEERS}\"/" $HOME/.0gchain/config/config.toml
 
 # Step 9: Change ports (Optional)
 EXTERNAL_IP=$(wget -qO- eth0.me)
@@ -122,4 +123,4 @@ sudo systemctl enable 0gd
 sudo systemctl start 0gd
 
 # Step 17: Verify the node is running correctly
-journalctl -u 0gd -f
+tail -f $HOME/.0gchain/log/chain.log
