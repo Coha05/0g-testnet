@@ -9,20 +9,20 @@
 
 # Installation
 
-## 1. Install Dependencies:
+### 1. Install Dependencies:
 ```sudo apt-get update
 sudo apt-get install cmake build-essential protobuf-compiler
 ```
-## 2. Install Rust:
+### 2. Install Rust:
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
-## 3. Clone the Source Code:
+### 3. Clone the Source Code:
 ```
 git clone https://github.com/0glabs/0g-da-retriever.git
 cd 0g-da-retriever
 ```
-# Edit the configuration 
+### 4. Edit the configuration 
 
 ```
 sudo nano $HOME/0g-da-retriever/run/config.toml
@@ -36,7 +36,7 @@ grpc_listen_address = "0.0.0.0:34005"
 eth_rpc_endpoint = "your-json-rpc-port"
 ```
 
-# Build in Release Mode:
+### 5. Build in Release Mode:
 ```
 cargo build --release
 ```
