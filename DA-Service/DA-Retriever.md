@@ -27,13 +27,13 @@ cd 0g-da-retriever
 ```
 sudo nano $HOME/0g-da-retriever/run/config.toml
 ```
-**Replace your JSON_RPC** 
+**Replace your JSON_RPC, default port: 8545** 
 
 ```
 log_level = "info"
 
 grpc_listen_address = "0.0.0.0:34005"
-eth_rpc_endpoint = "your-json-rpc-port:8545"
+eth_rpc_endpoint = "your-json-rpc-port"
 ```
 
 # Build in Release Mode:
