@@ -79,5 +79,6 @@ sudo journalctl -f -u 0g-dar.service
 ```
 
 ### Example for the logs
-![image](https://github.com/user-attachments/assets/0ba801bf-a2b6-4b9b-84ba-098b19135096)
+![image](https://github.com/user-attachments/assets/1209f527-6d71-4836-ad8f-bafa1cb667b2)
+
 
