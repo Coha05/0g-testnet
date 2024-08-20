@@ -57,8 +57,6 @@ WorkingDirectory=/root/0g-da-retriever
 ExecStart=/root/0g-da-retriever/target/release/retriever --config /root/0g-da-retriever/run/config.toml
 Restart=always
 RestartSec=10
-StandardOutput=syslog
-StandardError=syslog
 SyslogIdentifier=da-re
 
 [Install]
@@ -76,4 +74,10 @@ sudo systemctl status 0g-dar.service
 
 **Check logs real-time:**
 
-```sudo journalctl -f -u 0g-dar.service```
+```
+sudo journalctl -f -u 0g-dar.service
+```
+
+### Example for the logs
+![image](https://github.com/user-attachments/assets/0ba801bf-a2b6-4b9b-84ba-098b19135096)
+
