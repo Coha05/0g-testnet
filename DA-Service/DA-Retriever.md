@@ -63,6 +63,8 @@ SyslogIdentifier=da-re
 [Install]
 WantedBy=multi-user.target
 ```
+**If it not working let edit `User=root` and `$HOME` to `/root` or your actual user name.**
+
 ## 2. Run the service
 
 ```
