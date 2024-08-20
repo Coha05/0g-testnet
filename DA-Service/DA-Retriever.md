@@ -52,8 +52,9 @@ Description=DA Retriever Service
 After=network.target
 
 [Service]
-User=$USER
-ExecStart=/$HOME/0g-da-retriever/target/release/retriever --config $HOME/0g-da-retriever/run/config.toml
+User=root
+WorkingDirectory=/root/0g-da-retriever/target/release
+ExecStart=/root/0g-da-retriever/target/release/retriever --config root/0g-da-retriever/run/config.toml
 Restart=always
 RestartSec=10
 StandardOutput=syslog
@@ -63,7 +64,6 @@ SyslogIdentifier=da-re
 [Install]
 WantedBy=multi-user.target
 ```
-**If it not working let edit `User=root` and `$HOME` to `/root` or your actual user name.**
 
 ## 2. Run the service
 
