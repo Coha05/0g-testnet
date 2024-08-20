@@ -53,8 +53,8 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/root/0g-da-retriever/target/release
-ExecStart=/root/0g-da-retriever/target/release/retriever --config root/0g-da-retriever/run/config.toml
+WorkingDirectory=/root/0g-da-retriever
+ExecStart=/root/0g-da-retriever/target/release/retriever --config /root/0g-da-retriever/run/config.toml
 Restart=always
 RestartSec=10
 StandardOutput=syslog
