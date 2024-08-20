@@ -22,7 +22,19 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 git clone https://github.com/0glabs/0g-da-retriever.git
 cd 0g-da-retriever
 ```
-# Configuration (Updating)
+# Edit the configuration 
+
+```
+sudo nano $HOME/0g-da-retriever/run/config.toml
+```
+**Replace your JSON_RPC** 
+
+```
+log_level = "info"
+
+grpc_listen_address = "0.0.0.0:34005"
+eth_rpc_endpoint = "your-json-rpc-port:8545"
+```
 
 # Build in Release Mode:
 ```
@@ -31,7 +43,7 @@ cargo build --release
 # Running with systemd
 ## 1. Create service with name
 ```
-sudo nano /etc/systemd/system/da-re.service
+sudo nano /etc/systemd/system/0g-dar.service
 ```
 
 ```
@@ -55,11 +67,11 @@ WantedBy=multi-user.target
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable da-re.service
-sudo systemctl start da-re.service
-sudo systemctl status da-re.service
+sudo systemctl enable 0g-dar.service
+sudo systemctl start 0g-dar.service
+sudo systemctl status 0g-dar.service
 ```
 
 **Check logs real-time:**
 
-```sudo journalctl -f -u da-re.service```
+```sudo journalctl -f -u 0g-dar.service```
